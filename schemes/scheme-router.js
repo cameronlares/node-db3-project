@@ -89,7 +89,7 @@ router.put('/:id', (req, res) => {
     if (scheme) {
       Schemes.update(changes, id)
       .then(updatedScheme => {
-        res.json(updatedScheme);
+        res.json(`Scheme has been updated: ${updatedScheme}`);
       });
     } else {
       res.status(404).json({ message: 'Could not find scheme with given id' });
@@ -106,7 +106,7 @@ router.delete('/:id', (req, res) => {
   Schemes.remove(id)
   .then(deleted => {
     if (deleted) {
-      res.json({ removed: deleted });
+      res.json({ removed: `Scheme ${deleted} has been deleted ` });
     } else {
       res.status(404).json({ message: 'Could not find scheme with given id' });
     }
