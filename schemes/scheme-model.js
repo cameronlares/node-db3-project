@@ -17,7 +17,7 @@ function findById(id){
 }
 
 function findSteps(id){
-    return db('schemes').where({id}).first()
+    return db("steps").where("scheme_id",id)
 } 
 
 function add(schemeData){
@@ -31,6 +31,6 @@ function add(schemeData){
             // from the array and return it
             // return db("users").where({ id }).first();
 return findById(id);
-    })
+    });
 }
 
